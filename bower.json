@@ -1,0 +1,21 @@
+{
+  "name": "play-d3",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.1",
+    "animate.css": "~2.1.0",
+    "d3":"~3.3.5"
+  },
+  "authors": [
+    "Tomas Huang <huangguan3112789@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
