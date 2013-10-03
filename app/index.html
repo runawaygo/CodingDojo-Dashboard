@@ -21,101 +21,10 @@
     <div id="background"></div>
     <div id="view-container" class="fantacy-card-list">
       <div class="card-list-container">
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>                        
-      </div>
-      <div class="last">
-        <div class="card">
-          <div class="headshot" style="background-image:url(images/headshot.jpeg)"></div>
-          <div class="info">
-            <div class="name">青山老妖</div>
-            <div class="title">系统架构师</div>
-          </div>
-          <div class="datetime">发表于: 19:30</div>
-          <div class="content">
-            收到了覅就爱上了打飞机啊；了手机快递费了卡就是地方了框架萨都剌；风纪扣案例；的接口是否；垃圾快速的发；了就卡死；地方了尽快撒地方就；空间啊撒地方
-          </div>
-        </div>
+        
       </div>
     </div>
     
-
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
@@ -127,14 +36,42 @@
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
-
+    <script id="card-template" type="text/x-handlebars-template">
+      <div class="card failures-{{testsuite.$.failures}}">
+        <div class="info">
+          <h1 class="name">{{branchName}}</h1> 
+          <span class="concept">
+            <small class="failures">failures:</small> {{testsuite.$.failures}}&nbsp;&nbsp;
+            <small class="passes">passes:</small> {{testsuite.$.pass}}&nbsp;&nbsp;
+            <small class="all">all:</small> {{testsuite.$.tests}}</span>
+        </div>
+        <div class="testcase-list">
+          {{#each group}}
+          <div class="group">
+            <small>group: </small><h2>{{name}}</h2>
+            <ul>
+            {{#each testcase}}
+            <li class="testcase {{status}}">
+              <h3>{{$.name}}</h3>
+              {{#if failure}}
+                {{#each failure}}
+                <div class="failure">{{_}}</div>
+                {{/each}}
+              {{/if}}
+            </li>
+            {{/each}}
+            </ul>
+          </div>
+          {{/each}}
+        </div>
+      </div>                        
+    </script>
     <!-- build:js scripts/main.js -->
     <script src="bower_components/jquery/jquery.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="scripts/jquery.xml2json.js"></script>
     <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js(.tmp) scripts/coffee.js -->
-    <script src="scripts/hello.js"></script>
     <!-- endbuild -->
 </body>
 </html>

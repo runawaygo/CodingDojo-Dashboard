@@ -1,0 +1,51 @@
+[
+  {
+    "testsuite": {
+      "$": {
+        "name": "Mocha Tests",
+        "tests": "3",
+        "failures": "1",
+        "errors": "1",
+        "skipped": "0",
+        "timestamp": "Thu, 03 Oct 2013 08:19:22 GMT",
+        "time": "0.004"
+      },
+      "testcase": [
+        {
+          "$": {
+            "classname": "test abc",
+            "name": "abc return value type should be a string",
+            "time": "0.001"
+          }
+        },
+        {
+          "$": {
+            "classname": "test abc",
+            "name": "abc return value type should be \"hello dojo\"",
+            "time": "0"
+          }
+        },
+        {
+          "$": {
+            "classname": "test abc",
+            "name": "abc return value type should be \"hello dojo\"",
+            "time": "NaN",
+            "message": "expected 'hello dojo' to equal 'hello dojo1'"
+          },
+          "failure": [
+            {
+              "_": "AssertionError: expected 'hello dojo' to equal 'hello dojo1'",
+              "$": {
+                "classname": "test abc",
+                "name": "abc return value type should be \"hello dojo\"",
+                "time": "NaN",
+                "message": "expected 'hello dojo' to equal 'hello dojo1'"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "branchName": "master"
+  }
+]
