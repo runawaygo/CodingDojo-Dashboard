@@ -10,5 +10,5 @@ module.exports = (branch, callback)->
       if err
         callback err 
         return
-
+        
       callback null, json
