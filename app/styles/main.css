@@ -87,7 +87,7 @@ h1#title #last-update:hover {
   overflow: scroll;
 }
 .card-list-container .card.failures-0 {
-  background: rgba(50,100,100,0.8);
+  background: rgba(50,100,60,0.8);
 }
 .card-list-container .card {
   position: relative;
@@ -108,14 +108,14 @@ h1#title #last-update:hover {
 .card-list-container .card .info {
   vertical-align: top;
   text-align: left;
-  display: inline-block;
+  line-height: 1.3em;
 }
 .card-list-container .card .info .name {
-  line-height: 1.3em;
   display: inline-block;
   width: 200px;
 }
 .card-list-container .card .info .concept {
+  float: right;
   font-size: 1.2em;
 }
 .card-list-container .card .info .concept small {
@@ -125,8 +125,14 @@ h1#title #last-update:hover {
 .card-list-container .card .info .concept .failures {
   color: #ff4a4a;
 }
+.card-list-container .card .info .concept .failures.failures-0 {
+  color: #ddd;
+}
 .card-list-container .card .info .concept .passes {
   color: #07e807;
+}
+.card-list-container .card .info .concept .all {
+  color: #ff0;
 }
 .card-list-container .card .datetime {
   font-size: 0.8em;

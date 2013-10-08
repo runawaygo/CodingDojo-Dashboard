@@ -39,7 +39,7 @@
         <div class="info">
           <h1 class="name">{{branchName}}</h1> 
           <span class="concept">
-            <small class="failures">failures:</small> {{testsuite.$.failures}}&nbsp;&nbsp;
+            <small class="failures failures-{{testsuite.$.failures}}">failures:</small> {{testsuite.$.failures}}&nbsp;&nbsp;
             <small class="passes">passes:</small> {{testsuite.$.pass}}&nbsp;&nbsp;
             <small class="all">all:</small> {{testsuite.$.tests}}</span>
         </div>
