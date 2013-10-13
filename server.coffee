@@ -1,19 +1,18 @@
 connect = require "connect"
 fs = require 'fs'
 async = require 'async'
+exec = require('child_process').exec
 doUnitTest = require './doUnitTest'
 
 connect()
   .use('/', connect.static(__dirname+"/app"))
   .use('/results', (req,res)->
-    branchList = ['master', 'play1']
-    async.mapSeries branchList, doUnitTest, (err, data)->
-      console.log 'superwolf'
-      console.log data
-      console.log err
-      for item, index in data
-        item.branchName = branchList[index]
-      res.end JSON.stringify data
+    exec "git --git-dir='../CodingDojo/.git' fetch", (error, stdout, stderr)->
+      branchList = ['master', 'p1', 'p2']
+      async.mapSeries branchList, doUnitTest, (err, data)->
+        for item, index in data
+          item.branchName = branchList[index]
+        res.end JSON.stringify data
 
   )
   .use('/mock_results', (req,res)->

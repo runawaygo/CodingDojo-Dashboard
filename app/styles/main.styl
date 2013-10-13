@@ -1,8 +1,11 @@
+html
+  height 100%
 body
   color #ddd
   font-size 24px
   text-align center
-
+  height 100%
+  overflow hidden
 
 html,body,h1,h2,h3,h4,h5,h6
   padding 0
@@ -70,10 +73,15 @@ h1#title
     width 820px
 
 .card-list-container
+  position absolute
+  top 61px
+  bottom 0
+  left 0
+  right 0
+  overflow auto
   text-align left
   margin-left auto
   margin-right auto
-  overflow scroll
   .card.failures-0
     background rgba(50, 100, 60, .8)
   .card
@@ -92,7 +100,9 @@ h1#title
 
     text-align left
     color white
-
+    &.detail
+      .testcase-list
+        display block
     .info
       vertical-align top
       text-align left
@@ -123,6 +133,7 @@ h1#title
       right 20px
       color #aaa
     .testcase-list
+      display none
       margin-top 10px
       line-height 1.4em
       .group

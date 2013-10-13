@@ -8,6 +8,8 @@ module.exports = (branch, callback)->
 
     parseString stdout, (err, json)->
       if err
+        console.log stdout
+        console.log err
         callback err 
         return
         

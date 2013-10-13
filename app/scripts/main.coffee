@@ -1,6 +1,6 @@
 refreshData = ->
-  # $.getJSON '/results', (data)->
-  $.getJSON '/mock_results', (data)->
+  $.getJSON '/results', (data)->
+  # $.getJSON '/mock_results', (data)->
     $('.card-list-container').html('')  
     template = Handlebars.compile($("#card-template").html())
     for item in data
@@ -20,6 +20,9 @@ refreshData = ->
     , 1000
   
 $ ->
+  $('.card-list-container').delegate '.card', 'click', (event)->
+    $(@).toggleClass('detail')
+
   $('#last-update').click refreshData
   refreshData()
   setInterval refreshData,30000
