@@ -1,5 +1,13 @@
 refreshData = ->
-  $.getJSON '/results', (data)->
+  url = 
+    switch window.location.hash
+      when '#java'
+        'java/results'
+      when '#coffee'
+        'coffee/results'
+      else
+        'coffee/results'
+  $.getJSON url, (data)->
   # $.getJSON '/mock_results', (data)->
     $('.card-list-container').html('')  
     template = Handlebars.compile($("#card-template").html())

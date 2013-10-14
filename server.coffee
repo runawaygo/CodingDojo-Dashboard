@@ -2,16 +2,34 @@ connect = require "connect"
 fs = require 'fs'
 async = require 'async'
 exec = require('child_process').exec
+doUnitTest_java = require './doUnitTest.java'
 doUnitTest = require './doUnitTest'
 
 connect()
   .use('/', connect.static(__dirname+"/app"))
-  .use('/results', (req,res)->
+  .use('/java/results', (req,res)->
     exec "git --git-dir='../CodingDojo/.git' fetch", (error, stdout, stderr)->
-      branchList = ['master', 'p1', 'p2']
+      branchList = ['master']
+      async.mapSeries branchList, doUnitTest_java, (err, data)->
+        for item, index in data
+          if not item
+            delete data[index]
+            continue
+          item.branchName = branchList[index]
+
+        res.end JSON.stringify data
+
+  )
+  .use('/coffee/results', (req,res)->
+    exec "git --git-dir='../CodingDojo/.git' fetch", (error, stdout, stderr)->
+      branchList = ['superhexi', 'team4', 'sucks']
       async.mapSeries branchList, doUnitTest, (err, data)->
         for item, index in data
+          if not item
+            delete data[index]
+            continue
           item.branchName = branchList[index]
+
         res.end JSON.stringify data
 
   )

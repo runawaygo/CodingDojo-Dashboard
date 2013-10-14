@@ -2,7 +2,18 @@
 var refreshData;
 
 refreshData = function() {
-  return $.getJSON('/results', function(data) {
+  var url;
+  url = (function() {
+    switch (window.location.hash) {
+      case '#java':
+        return 'java/results';
+      case '#coffee':
+        return 'coffee/results';
+      default:
+        return 'coffee/results';
+    }
+  })();
+  return $.getJSON(url, function(data) {
     var groupItem, html, item, key, template, testcase, _i, _j, _len, _len1, _ref;
     $('.card-list-container').html('');
     template = Handlebars.compile($("#card-template").html());
