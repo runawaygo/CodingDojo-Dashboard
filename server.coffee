@@ -4,7 +4,6 @@ async = require 'async'
 exec = require('child_process').exec
 doUnitTest_java = require './doUnitTest.java'
 doUnitTestExt = require './doUnitTestExt'
-doUnitTest = require './doUnitTest'
 path = require 'path'
 
 connect()
