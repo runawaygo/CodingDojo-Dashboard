@@ -1,3 +1,10 @@
+Install:
+    
+    git clone https://github.com/runawaygo/CodingDojo-Dashboard.git
+    cd CodingDojo-Dashboard
+    npm install
+    bower install
+
 Start:
 
     coffee server.coffee
@@ -6,7 +13,7 @@ Open url in browser:
 
     127.0.0.1:9000
 
-Insepct repo:
+Add repo:
 
     mkdir repos
     cd repos
