@@ -1,5 +1,7 @@
 Preinstall:
+
     Make sure you have installed node.js, coffee and bower
+    
         1. node.js:nodejs.org
         2. sudo npm install coffee-script -g
         3. sudo npm install bower -g
