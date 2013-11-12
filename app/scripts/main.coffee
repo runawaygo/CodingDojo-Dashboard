@@ -1,18 +1,11 @@
 refreshData = ->
-  url = 
-    switch window.location.hash
-      when '#java'
-        'java/results'
-      when '#coffee'
-        'coffee/results'
-      else
-        'coffee/results'
+  url = if  window.location.search then "results/#{window.location.search}" else '/mock_results'
+
   $.getJSON url, (data)->
-  # $.getJSON '/mock_results', (data)->
     $('.card-list-container').html('')  
     template = Handlebars.compile($("#card-template").html())
     for item in data
-      item.testsuite.$.pass = item.testsuite.$.tests-item.testsuite.$.failures
+      item.testsuite.$.pass = item.testsuite.$.tests-item.testsuite.$.failures-item.testsuite.$.skipped
       for testcase in item.testsuite.testcase
         testcase.status = if testcase.failure then 'failed' else 'pass'
 
@@ -33,4 +26,4 @@ $ ->
 
   $('#last-update').click refreshData
   refreshData()
-  setInterval refreshData,30000
+  setInterval refreshData,300000

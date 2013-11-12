@@ -3,23 +3,14 @@ var refreshData;
 
 refreshData = function() {
   var url;
-  url = (function() {
-    switch (window.location.hash) {
-      case '#java':
-        return 'java/results';
-      case '#coffee':
-        return 'coffee/results';
-      default:
-        return 'coffee/results';
-    }
-  })();
+  url = window.location.search ? "results/" + window.location.search : '/mock_results';
   return $.getJSON(url, function(data) {
     var groupItem, html, item, key, template, testcase, _i, _j, _len, _len1, _ref;
     $('.card-list-container').html('');
     template = Handlebars.compile($("#card-template").html());
     for (_i = 0, _len = data.length; _i < _len; _i++) {
       item = data[_i];
-      item.testsuite.$.pass = item.testsuite.$.tests - item.testsuite.$.failures;
+      item.testsuite.$.pass = item.testsuite.$.tests - item.testsuite.$.failures - item.testsuite.$.skipped;
       _ref = item.testsuite.testcase;
       for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
         testcase = _ref[_j];
@@ -57,5 +48,5 @@ $(function() {
   });
   $('#last-update').click(refreshData);
   refreshData();
-  return setInterval(refreshData, 30000);
+  return setInterval(refreshData, 300000);
 });
